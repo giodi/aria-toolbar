@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ARIA TOOLBAR</title>
+  <style>
+    button {
+      display: block;
+      padding: 1em;
+      margin: 0;
+      border: 0;
+    }
+
+    button[tabindex="0"] {
+      background: green;
+    }
+
+    button:focus,
+    button:hover,
+    button:active {
+      background: red;
+    }
+
+    .aria-toolbar {
+      background: blue;
+      display: flex;
+      flex-flow: row nowrap;
+    }
+
+    .aria-toolbar>div>div {
+      display: none;
+      position: absolute;
+    }
+
+    .aria-toolbar>div:hover>div,
+    .aria-toolbar>div>button:focus+div {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="aria-toolbar" role="toolbar">
+    <div>
+      <button>Tool 1</button>
+    </div>
+    <div>
+      <button>Tool 2</button>
+    </div>
+    <div>
+      <button>Menu 1</button>
+      <div>
+        <div><button>Sub Tool 1</button></div>
+        <div><button>Sub Tool 2</button></div>
+        <div><button>Sub Tool 3</button></div>
+      </div>
+    </div>
+    <div>
+      <button>Tool 3</button>
+    </div>
+    <div>
+      <button>Menu 2</button>
+      <div>
+        <div><button>Sub Tool 1</button></div>
+        <div><button>Sub Tool 2</button></div>
+        <div><button>Sub Tool 3</button></div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <h1>ARIA Toolbar</h1>
+    <p>
+      <a href="https://www.w3.org/TR/2017/REC-wai-aria-1.1-20171214/#toolbar" target="_blank" rel="noopener">Accessible Rich Internet Applications (WAI-ARIA) 1.1</a>
+    </p>
+  </main>
+  <script src="aria.toolbar.js"></script>
+  <script>
+  </script>
+</body>
+
+</html>
